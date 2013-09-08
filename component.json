@@ -1,0 +1,38 @@
+{
+  "name": "ui-select",
+  "repo": "vieron/ui-select",
+  "description": "Custom select component",
+  "version": "0.0.1",
+  "keywords": [
+    "select",
+    "optgroup",
+    "option",
+    "combobox"
+  ],
+  "dependencies": {
+    "component/emitter": "*",
+    "component/domify": "*",
+    "component/classes": "*",
+    "component/query": "*",
+    "scttnlsn/events": "*",
+    "component/indexof": "*",
+    "yields/scrolltop": "*",
+    "component/keyname": "*",
+    "component/bind": "*",
+    "yields/data": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "styles": [
+    "index.scss"
+  ],
+  "templates": [
+    "templates/select.html",
+    "templates/group.html",
+    "templates/option.html"
+  ]
+}

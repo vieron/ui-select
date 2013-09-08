@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="build/ui-select.css" type="text/css">
+  <script src="build/ui-select.js"></script>
+  <style>
+    body {
+      font-size: 16px;
+      font-family: "Helvetica Neue", "Helvetica", "Arial";
+    }
+
+    input {
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    .ui-select {
+      width: 300px;
+    }
+
+    .ui-select .ui-select-label {
+      background: #efefef;
+      padding: 10px;
+      border: 1px solid #ccc;
+
+      -webkit-transition: border-color 0.2s ease-out;
+    }
+
+    .ui-select:focus,
+    .ui-select .ui-select-search:focus {
+      outline: none;
+    }
+
+    .ui-select.ui-select-closed:focus .ui-select-label {
+      border-color: blue;
+    }
+
+    .ui-select .ui-select-search {
+      margin: 0;
+      border: 1px solid #ccc;
+      border-width: 0 0 1px 0;
+    }
+
+    .ui-select .ui-select-label:after {
+      content: "▼";
+      padding-left: 10px;
+      line-height: 18px;
+      font-size: 10px;
+      float: right;
+    }
+
+    .ui-select .ui-select-inner {
+      border: 1px solid #ccc;
+    }
+
+    .ui-select.south .ui-select-inner {
+      border-top-width: 0;
+    }
+
+    .ui-select.north .ui-select-inner {
+      border-bottom-width: 0;
+    }
+
+    .ui-select .ui-select-group-label {
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    .ui-select .ui-select-list {
+      max-height: 230px;
+    }
+
+    .ui-select .ui-select-option {
+      padding: 10px;
+      background: #FFF;
+      -webkit-transition: background-color 0.2s ease-out;
+    }
+
+    .ui-select .ui-select-group .ui-select-option {
+      padding-left: 15px;
+    }
+
+    .ui-select .ui-select-option.ui-select-focus {
+      background: #efefef;
+    }
+  </style>
+</head>
+<body>
+
+
+  <select>
+    <optgroup label="Swedish Cars">
+      <option value="volvo">Volvo</option>
+      <option value="saab">Saab</option>
+    </optgroup>
+    <optgroup label="German Cars">
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option>
+    </optgroup>
+  </select>
+
+  <select>
+      <option value="0"> Option 0</option>
+      <option value="1"> Option 1</option>
+      <option value="2"> Option 2</option>
+      <option value="3"> Option 3</option>
+      <option value="4"> Option 4</option>
+      <option value="5"> Option 5</option>
+      <option value="6"> Option 6</option>
+      <option value="7"> Option 7</option>
+      <option value="8"> Option 8</option>
+      <option value="9"> Option 9</option>
+      <option value="10">Option 10</option>
+      <option value="11">Option 11</option>
+      <option value="12">Option 12</option>
+      <option value="13">Option 13</option>
+      <option value="14">Option 14</option>
+      <option value="15">Option 15</option>
+  </select>
+
+
+
+
+
+  <script>
+    var UISelect = require('ui-select');
+
+    var combo = new UISelect({
+        search      : true
+      , placeholder : 'Select something...'
+    });
+
+    combo.group('Group 1')
+      .add(1, 'Option 1')
+      .add(2, 'Option 2')
+      .add(3, 'Option 3');
+
+    combo
+      .add(4, 'Option 4')
+      .add(5, 'Option 5')
+      .add(6, 'Option 6');
+    combo.appendTo(document.body);
+
+
+
+    var selects = document.body.querySelectorAll('select');
+    var combos = [];
+    for(var i = 0, l = selects.length; i < l; i++) {
+      combos.push(new UISelect(selects[i], {
+        search : true
+      }));
+    }
+
+
+  </script>
+</body>
+</html>
