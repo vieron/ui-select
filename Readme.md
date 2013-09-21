@@ -3,6 +3,7 @@
 
   A custom select component
 
+  ![build status](https://api.travis-ci.org/vieron/ui-select.png "ui-select build status")
 
   This component is built on the top of [combobox](https://github.com/eivindfjeldstad/combobox). So, most of the core functionality is taken from there but I've written a more complete API, added some new features and renamed the component to suit UI-kit needs and conventions.
 
