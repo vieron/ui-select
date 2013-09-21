@@ -14,9 +14,6 @@ var Emitter = require('emitter')
  */
 
 function UISelect (select, options) {
-  if (!(this instanceof UISelect))
-    return new UISelect(select, options);
-
   this.fromSelect = select && select.tagName == 'SELECT';
 
   this.fromSelect && (this.selectEl = select);
@@ -35,7 +32,6 @@ function UISelect (select, options) {
 }
 
 UISelect.tabindex = 1;
-
 
 var fn = UISelect.prototype;
 
@@ -74,7 +70,7 @@ fn.addOptionsFromSelect = function(parent) {
     o = opts[j];
     this.add( o.value, o.innerHTML);
   }
-}
+};
 
 fn.buildFromSelect = function() {
   var i, l;
@@ -90,7 +86,7 @@ fn.buildFromSelect = function() {
   }
 
   return this;
-}
+};
 
 
 /**
@@ -208,7 +204,7 @@ fn.add = function (value, text, selected) {
     this.select(value);
   }
 
-  this.emit('option', value, text);;
+  this.emit('option', value, text);
 
   return this;
 };
@@ -253,7 +249,7 @@ var isLetter = /\w/;
 fn.onkeypress = function (e) {
   if (!this.closed) return;
 
-  var key = e.keyCode
+  var key = e.keyCode;
   var c = String.fromCharCode(key);
 
   if (!isLetter.test(c)) return;
@@ -392,7 +388,7 @@ fn.scrollTo = function (value) {
   }
 
   return this;
-}
+};
 
 /**
  * Reposition select
@@ -566,10 +562,12 @@ fn.toggle = function () {
 
 
 fn.value = function(val) {
-  if (typeof val === 'undefined') { return this.val; };
+  if (typeof val === 'undefined') { return this.val; }
   this.select(val);
   return this;
-}
+};
+
+fn.destroy = fn.unbind;
 
 /**
  * Get element offset
