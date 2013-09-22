@@ -16,6 +16,8 @@
 
 ## API
 
+[http://vieron.github.io/ui-select/](http://vieron.github.io/ui-select/)
+
 ### .group([label])
 
 **Create a new optgroup** or **get** the group name (if exists) of the selected option.

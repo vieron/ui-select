@@ -10,9 +10,14 @@ var Emitter = require('emitter')
   , data = require('data');
 
 /**
- * Select constructor
+ * @class UISelect
+ * Select component
+ *
+ * @constructor
+ * Creates a new Select instance.
+ * @param {HTMLElement} [select] The original select in DOM.
+ * @param {Object} [options] Configuration object.
  */
-
 function UISelect (select, options) {
   this.fromSelect = select && select.tagName == 'SELECT';
 

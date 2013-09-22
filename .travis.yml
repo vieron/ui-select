@@ -1,8 +1,19 @@
 language: node_js
 node_js:
   - "0.10.x"
+rvm:
+  - "1.9.3"
+before_install:
+  - gem install jsduck -v=4
 before_script:
   - component install
 script:
-  - grunt
-  - grunt test
+  - grunt --verbose
+  - grunt test --verbose
+after_success:
+  - chmod a+x node_modules/uick-grunt/update-gh-pages.sh
+  - ./node_modules/uick-grunt/update-gh-pages.sh
+env:
+  global:
+    - REPO="vieron/ui-select"
+    - secure: Isl13N1Odzahqd7EO4DalF25qXrCIeFZrMK4iSV3IyPP700qB7HCqcEki7BV1QxfvVbSgRCszsAd/V+3Qm4ttFM8VxxMJB05OZo8xjZTCo+ufXXiHDKKBv4+jmI3hgb/ulpbHjTrxiPmSOo4I9GdqjQ4d1FFaX34i8nYKy/jLTI=
